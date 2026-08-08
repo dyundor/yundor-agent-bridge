@@ -74,11 +74,12 @@ def check_path_security(path):
 
 
     return {
-        "allowed": True
+        "allowed": True,
+        "reason": ""
     }
 
 
-def validate_project(path):
+def validate_project_path(path):
 
     real = os.path.realpath(path)
 
@@ -108,3 +109,12 @@ def validate_project(path):
 
 
     return True
+
+
+def is_git_project(path):
+
+    real = os.path.realpath(path)
+
+    git_path = os.path.join(real, ".git")
+
+    return os.path.exists(git_path)
