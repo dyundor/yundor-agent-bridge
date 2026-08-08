@@ -3,7 +3,7 @@ import yaml
 
 from opencode_client import OpenCodeClient
 from project_reader import read_project_context
-from git_manager import git_status
+from git_manager import git_status, get_commit_hash, get_diff_summary
 from report_parser import extract_text
 from session_manager import (
     get_saved_session,
@@ -11,6 +11,7 @@ from session_manager import (
     clear_session,
     check_session_valid,
 )
+from report_generator import generate_report
 
 
 def main():
@@ -51,6 +52,8 @@ def main():
     context = read_project_context(project_path)
 
     git_before = git_status(project_path)
+
+    before_commit = get_commit_hash(project_path)
 
     session_id = get_saved_session(config, project)
 
@@ -123,7 +126,23 @@ Git状态：
 
     print("\n===== DeepSeek 输出 =====")
 
-    print(extract_text(result))
+    ai_output = extract_text(result)
+    print(ai_output)
+
+    after_commit = get_commit_hash(project_path)
+
+    diff_summary = get_diff_summary(project_path)
+
+    report = generate_report(
+        project,
+        task,
+        before_commit,
+        after_commit,
+        diff_summary,
+        ai_output,
+    )
+
+    print("\n" + report)
 
 
 if __name__ == "__main__":
