@@ -12,6 +12,7 @@ from session_manager import (
     check_session_valid,
 )
 from report_generator import generate_report
+from execution_policy import get_execution_policy
 
 
 def main():
@@ -86,9 +87,9 @@ def main():
         print("\n保存 Session...")
         save_session(config_path, project, session_id)
 
-    prompt = f"""
+    policy = get_execution_policy(project)
 
-你现在负责项目：
+    prompt = f"""{policy}
 
 路径：
 {project_path}
@@ -106,16 +107,9 @@ Git状态：
 
 
 
-任务：
+Task:
 
 {task}
-
-
-规则：
-
-1. 不要修改代码，除非明确要求。
-2. 输出清晰总结。
-3. 如果发现问题，给实施建议。
 
 
 """
