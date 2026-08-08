@@ -4,7 +4,7 @@ import yaml
 from opencode_client import OpenCodeClient
 from project_reader import read_project_context
 from git_manager import git_status, get_commit_hash, get_diff_summary
-from report_parser import extract_text
+from report_parser import extract_text, parse_report
 from session_manager import (
     get_saved_session,
     save_session,
@@ -13,6 +13,10 @@ from session_manager import (
 )
 from report_generator import generate_report
 from execution_policy import get_execution_policy
+from memory_manager import get_memory
+from memory_writer import append_changelog
+from task_manager import create_task, update_task
+from task_status import get_status_summary
 
 
 def main():
@@ -28,6 +32,13 @@ def main():
         args.pop(index)
 
     task = " ".join(args)
+
+    task_id = create_task(project, task)
+
+    status = get_status_summary()
+
+    if status["running"] or status["failed"]:
+        print("\nFound unfinished tasks")
 
     config_path = "config.yaml"
 
@@ -89,6 +100,8 @@ def main():
 
     policy = get_execution_policy(project)
 
+    memory = get_memory(project_path)
+
     prompt = f"""{policy}
 
 路径：
@@ -99,6 +112,20 @@ def main():
 
 {context}
 
+
+Project Memory:
+
+{memory['project_memory']}
+
+
+Decisions:
+
+{memory['decisions']}
+
+
+Changelog:
+
+{memory['changelog']}
 
 
 Git状态：
@@ -116,27 +143,63 @@ Task:
 
     print("\n发送任务...")
 
-    result = client.send_message(session_id, prompt)
+    update_task(task_id, "running", "")
 
-    print("\n===== DeepSeek 输出 =====")
+    try:
+        result = client.send_message(session_id, prompt)
 
-    ai_output = extract_text(result)
-    print(ai_output)
+        print("\n===== DeepSeek 输出 =====")
 
-    after_commit = get_commit_hash(project_path)
+        ai_output = extract_text(result)
+        print(ai_output)
 
-    diff_summary = get_diff_summary(project_path)
+        after_commit = get_commit_hash(project_path)
 
-    report = generate_report(
-        project,
-        task,
-        before_commit,
-        after_commit,
-        diff_summary,
-        ai_output,
-    )
+        diff_summary = get_diff_summary(project_path)
 
-    print("\n" + report)
+        report = generate_report(
+            project,
+            task,
+            before_commit,
+            after_commit,
+            diff_summary,
+            ai_output,
+        )
+
+        try:
+            parsed = parse_report(ai_output)
+
+            changelog_lines = [
+                f"Task: {task}",
+                "",
+                "Modified Files:",
+            ]
+
+            for f in parsed.get("modified_files", []):
+                changelog_lines.append(f"- {f}")
+
+            if parsed.get("tests"):
+                changelog_lines.append("")
+                changelog_lines.append("Tests:")
+                for t in parsed["tests"]:
+                    changelog_lines.append(f"- {t}")
+
+            next_step = parsed.get("next_step", "")
+            if next_step:
+                changelog_lines.append("")
+                changelog_lines.append(f"Next Step: {next_step}")
+
+            append_changelog(project_path, "\n".join(changelog_lines))
+        except Exception:
+            pass
+
+        update_task(task_id, "completed", ai_output)
+
+        print("\n" + report)
+
+    except Exception as e:
+        update_task(task_id, "failed", str(e))
+        raise
 
 
 if __name__ == "__main__":

@@ -1,0 +1,9 @@
+{
+  "id": "60bfb8d8",
+  "project": "bridge",
+  "task": "--task tasks/v0.2-phase8-task-status-step2.md",
+  "status": "completed",
+  "result": "## Phase 8 Step 5 Summary\n\n**Modified Files:** `main.py`\n\n**Flow Changes:**\n```\ncreate_task → get_status_summary → running/failed 存在? → 打印提醒 → 继续执行\n```\n\n**改动点：**\n- `main.py:19` — 新增 `from task_status import get_status_summary`\n- `main.py:37-40` — `create_task` 后调用 `get_status_summary()`，存在 running/failed 时打印 \"Found unfinished tasks\"\n\n**Test Result:** 语法检查通过。不自动恢复，仅提醒。原有所有功能不变。",
+  "created_at": "2026-08-08T13:43:45.303771",
+  "updated_at": "2026-08-08T13:43:59.025417"
+}

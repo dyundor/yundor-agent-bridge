@@ -1,0 +1,9 @@
+{
+  "id": "874fa2d8",
+  "project": "bridge",
+  "task": "--task tasks/v0.2-phase8-task-status-step1.md",
+  "status": "completed",
+  "result": "## Phase 8 Step 4 Summary\n\n**Modified Files:** `task_status.py` (新增)\n\n**Functions Added:**\n- `get_status_summary()` — 基于 `list_tasks()` 按 status 分组，返回 `{\"pending\": [...], \"running\": [...], \"failed\": [...], \"completed\": [...]}`\n\n**Test Result:** 运行中任务被正确识别。无任务时返回空列表，不依赖 task_manager 其他修改。",
+  "created_at": "2026-08-08T13:42:36.815976",
+  "updated_at": "2026-08-08T13:42:46.505602"
+}
