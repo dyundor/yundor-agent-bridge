@@ -1,0 +1,80 @@
+# ============================================================
+# Yundor Agent Bridge v0.3 — Runtime Control Policy
+# ============================================================
+# This file controls the autonomous supervisor's guardrails.
+# Changing values here takes effect on the next supervisor loop
+# iteration (no restart required).
+
+# ---------- Autonomous execution ----------
+auto_run:
+  # When false, supervisor will NOT execute any task.
+  # Only manual mode (python3 main.py "task") is allowed.
+  enabled: true
+
+# ---------- Iteration limits ----------
+limits:
+  # Hard stop after this many iterations, regardless of success.
+  max_iterations: 10
+
+  # Supervisor pauses if consecutive failures reach this number.
+  max_consecutive_failures: 3
+
+  # Max total tasks per session (including retries).
+  max_tasks_per_session: 20
+
+# ---------- Emergency stop ----------
+emergency_stop:
+  # Supervisor checks task objectives and results for these keywords.
+  # Any match triggers immediate halt and human notification.
+  keywords:
+    - "DROP TABLE"
+    - "DELETE FROM"
+    - "rm -rf"
+    - "git push"
+    - "force push"
+    - "git reset --hard"
+    - "production"
+    - "paid api"
+    - "credit card"
+
+# ---------- Budget ----------
+budget:
+  # Max USD spend on paid APIs per session. 0 = no paid APIs allowed.
+  api_budget_usd: 0
+
+  # If remaining ImportYeti credits fall below this, stop.
+  importyeti_min_credits: 25
+
+# ---------- Dangerous operations (blacklist) ----------
+dangerous_operations:
+  # Any task whose objective contains one of these substrings is
+  # blocked from autonomous execution and requires manual approval.
+  blocked:
+    - "delete database"
+    - "drop table"
+    - "truncate"
+    - "reset hard"
+    - "force push"
+    - "production deploy"
+    - "modify credentials"
+    - "modify .env"
+    - "modify config.yaml"
+    - "purchase api"
+    - "spend credit"
+    - "modify secrets"
+
+# ---------- Reviewer thresholds ----------
+reviewer:
+  # Minimum quality score for auto-approval (0-100).
+  min_quality_score: 50
+
+  # Require human review when:
+  manual_review_triggers:
+    # GPT quality score is below threshold.
+    - quality_below_threshold
+    # Same task failed previously in this session.
+    - repeated_failure
+    # Diff contains files outside the target project.
+    - out_of_scope_changes
+    # Paid API was consumed (even if approved).
+    - api_credit_consumed

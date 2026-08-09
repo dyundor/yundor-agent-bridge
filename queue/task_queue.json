@@ -1,0 +1,401 @@
+[
+  {
+    "id": "MI-15.70-3c73a2",
+    "project": "market-intelligence",
+    "sprint": "15.70",
+    "objective": "Sprint 15.70: Expand representative product resources to all 9 categories. Add brand, model, product URL, image URL, source type, and verification date for each category. Ensure image load failures show placeholder state without breaking the hot product list. Never use unverified search thumbnails, AI-generated images, or hotlinked images without traceable source.",
+    "priority": "high",
+    "constraints": [
+      "no_paid_api",
+      "preserve_existing_data",
+      "incremental_change",
+      "run_tests",
+      "create_commit"
+    ],
+    "success_criteria": [
+      "All 9 product categories have representative product entries",
+      "Image failures show placeholder, not broken UI",
+      "npm test passes",
+      "npm run build passes",
+      "No paid API consumed"
+    ],
+    "status": "completed",
+    "created_at": "2026-08-09T01:27:34.962639",
+    "completed_at": "2026-08-09T01:27:34.964415"
+  },
+  {
+    "id": "MI-15.70-3ad7e1",
+    "project": "market-intelligence",
+    "sprint": "15.70",
+    "objective": "Sprint 15.70: Expand representative product resources to all 9 categories. Add brand, model, product URL, image URL, source type, and verification date for each category. Ensure image load failures show placeholder state without breaking the hot product list. Never use unverified search thumbnails, AI-generated images, or hotlinked images without traceable source.",
+    "priority": "high",
+    "constraints": [
+      "no_paid_api",
+      "preserve_existing_data",
+      "incremental_change",
+      "run_tests",
+      "create_commit"
+    ],
+    "success_criteria": [
+      "All 9 product categories have representative product entries",
+      "Image failures show placeholder, not broken UI",
+      "npm test passes",
+      "npm run build passes",
+      "No paid API consumed"
+    ],
+    "status": "completed",
+    "created_at": "2026-08-09T01:27:34.978671",
+    "completed_at": "2026-08-09T01:27:34.980464"
+  },
+  {
+    "id": "MI-15.70-10d15f",
+    "project": "market-intelligence",
+    "sprint": "15.70",
+    "objective": "Sprint 15.70: Expand representative product resources to all 9 categories. Add brand, model, product URL, image URL, source type, and verification date for each category. Ensure image load failures show placeholder state without breaking the hot product list. Never use unverified search thumbnails, AI-generated images, or hotlinked images without traceable source.",
+    "priority": "high",
+    "constraints": [
+      "no_paid_api",
+      "preserve_existing_data",
+      "incremental_change",
+      "run_tests",
+      "create_commit"
+    ],
+    "success_criteria": [
+      "All 9 product categories have representative product entries",
+      "Image failures show placeholder, not broken UI",
+      "npm test passes",
+      "npm run build passes",
+      "No paid API consumed"
+    ],
+    "status": "completed",
+    "created_at": "2026-08-09T01:27:34.994134",
+    "completed_at": "2026-08-09T01:27:34.995928"
+  },
+  {
+    "id": "MI-15.70-21b6ed",
+    "project": "market-intelligence",
+    "sprint": "15.70",
+    "objective": "Sprint 15.70: Expand representative product resources to all 9 categories. Add brand, model, product URL, image URL, source type, and verification date for each category. Ensure image load failures show placeholder state without breaking the hot product list. Never use unverified search thumbnails, AI-generated images, or hotlinked images without traceable source.",
+    "priority": "high",
+    "constraints": [
+      "no_paid_api",
+      "preserve_existing_data",
+      "incremental_change",
+      "run_tests",
+      "create_commit"
+    ],
+    "success_criteria": [
+      "All 9 product categories have representative product entries",
+      "Image failures show placeholder, not broken UI",
+      "npm test passes",
+      "npm run build passes",
+      "No paid API consumed"
+    ],
+    "status": "completed",
+    "created_at": "2026-08-09T01:27:35.009588",
+    "completed_at": "2026-08-09T01:27:35.011434"
+  },
+  {
+    "id": "MI-15.70-3e638d",
+    "project": "market-intelligence",
+    "sprint": "15.70",
+    "objective": "Sprint 15.70: Expand representative product resources to all 9 categories. Add brand, model, product URL, image URL, source type, and verification date for each category. Ensure image load failures show placeholder state without breaking the hot product list. Never use unverified search thumbnails, AI-generated images, or hotlinked images without traceable source.",
+    "priority": "high",
+    "constraints": [
+      "no_paid_api",
+      "preserve_existing_data",
+      "incremental_change",
+      "run_tests",
+      "create_commit"
+    ],
+    "success_criteria": [
+      "All 9 product categories have representative product entries",
+      "Image failures show placeholder, not broken UI",
+      "npm test passes",
+      "npm run build passes",
+      "No paid API consumed"
+    ],
+    "status": "completed",
+    "created_at": "2026-08-09T01:27:35.024962",
+    "completed_at": "2026-08-09T01:27:35.026983"
+  },
+  {
+    "id": "MI-15.70-c1a9a3",
+    "project": "market-intelligence",
+    "sprint": "15.70",
+    "objective": "Sprint 15.70: Expand representative product resources to all 9 categories. Add brand, model, product URL, image URL, source type, and verification date for each category. Ensure image load failures show placeholder state without breaking the hot product list. Never use unverified search thumbnails, AI-generated images, or hotlinked images without traceable source.",
+    "priority": "high",
+    "constraints": [
+      "no_paid_api",
+      "preserve_existing_data",
+      "incremental_change",
+      "run_tests",
+      "create_commit"
+    ],
+    "success_criteria": [
+      "All 9 product categories have representative product entries",
+      "Image failures show placeholder, not broken UI",
+      "npm test passes",
+      "npm run build passes",
+      "No paid API consumed"
+    ],
+    "status": "completed",
+    "created_at": "2026-08-09T01:27:35.041075",
+    "completed_at": "2026-08-09T01:27:35.043109"
+  },
+  {
+    "id": "MI-15.70-504d6a",
+    "project": "market-intelligence",
+    "sprint": "15.70",
+    "objective": "Sprint 15.70: Expand representative product resources to all 9 categories. Add brand, model, product URL, image URL, source type, and verification date for each category. Ensure image load failures show placeholder state without breaking the hot product list. Never use unverified search thumbnails, AI-generated images, or hotlinked images without traceable source.",
+    "priority": "high",
+    "constraints": [
+      "no_paid_api",
+      "preserve_existing_data",
+      "incremental_change",
+      "run_tests",
+      "create_commit"
+    ],
+    "success_criteria": [
+      "All 9 product categories have representative product entries",
+      "Image failures show placeholder, not broken UI",
+      "npm test passes",
+      "npm run build passes",
+      "No paid API consumed"
+    ],
+    "status": "completed",
+    "created_at": "2026-08-09T01:27:35.056004",
+    "completed_at": "2026-08-09T01:27:35.058758"
+  },
+  {
+    "id": "MI-15.70-974b95",
+    "project": "market-intelligence",
+    "sprint": "15.70",
+    "objective": "Sprint 15.70: Expand representative product resources to all 9 categories. Add brand, model, product URL, image URL, source type, and verification date for each category. Ensure image load failures show placeholder state without breaking the hot product list. Never use unverified search thumbnails, AI-generated images, or hotlinked images without traceable source.",
+    "priority": "high",
+    "constraints": [
+      "no_paid_api",
+      "preserve_existing_data",
+      "incremental_change",
+      "run_tests",
+      "create_commit"
+    ],
+    "success_criteria": [
+      "All 9 product categories have representative product entries",
+      "Image failures show placeholder, not broken UI",
+      "npm test passes",
+      "npm run build passes",
+      "No paid API consumed"
+    ],
+    "status": "completed",
+    "created_at": "2026-08-09T01:27:35.071913",
+    "completed_at": "2026-08-09T01:27:35.074587"
+  },
+  {
+    "id": "MI-15.70-32de9d",
+    "project": "market-intelligence",
+    "sprint": "15.70",
+    "objective": "Sprint 15.70: Expand representative product resources to all 9 categories. Add brand, model, product URL, image URL, source type, and verification date for each category. Ensure image load failures show placeholder state without breaking the hot product list. Never use unverified search thumbnails, AI-generated images, or hotlinked images without traceable source.",
+    "priority": "high",
+    "constraints": [
+      "no_paid_api",
+      "preserve_existing_data",
+      "incremental_change",
+      "run_tests",
+      "create_commit"
+    ],
+    "success_criteria": [
+      "All 9 product categories have representative product entries",
+      "Image failures show placeholder, not broken UI",
+      "npm test passes",
+      "npm run build passes",
+      "No paid API consumed"
+    ],
+    "status": "completed",
+    "created_at": "2026-08-09T01:27:35.087652",
+    "completed_at": "2026-08-09T01:27:35.089505"
+  },
+  {
+    "id": "MI-15.70-090a25",
+    "project": "market-intelligence",
+    "sprint": "15.70",
+    "objective": "Sprint 15.70: Expand representative product resources to all 9 categories. Add brand, model, product URL, image URL, source type, and verification date for each category. Ensure image load failures show placeholder state without breaking the hot product list. Never use unverified search thumbnails, AI-generated images, or hotlinked images without traceable source.",
+    "priority": "high",
+    "constraints": [
+      "no_paid_api",
+      "preserve_existing_data",
+      "incremental_change",
+      "run_tests",
+      "create_commit"
+    ],
+    "success_criteria": [
+      "All 9 product categories have representative product entries",
+      "Image failures show placeholder, not broken UI",
+      "npm test passes",
+      "npm run build passes",
+      "No paid API consumed"
+    ],
+    "status": "completed",
+    "created_at": "2026-08-09T01:27:35.103282",
+    "completed_at": "2026-08-09T01:27:35.105217"
+  },
+  {
+    "id": "MI-15.70-9ec36f",
+    "project": "market-intelligence",
+    "sprint": "15.70",
+    "objective": "Sprint 15.70: Expand representative product resources to all 9 categories. Add brand, model, product URL, image URL, source type, and verification date for each category. Ensure image load failures show placeholder state without breaking the hot product list. Never use unverified search thumbnails, AI-generated images, or hotlinked images without traceable source.",
+    "priority": "high",
+    "constraints": [
+      "no_paid_api",
+      "preserve_existing_data",
+      "incremental_change",
+      "run_tests",
+      "create_commit"
+    ],
+    "success_criteria": [
+      "All 9 product categories have representative product entries",
+      "Image failures show placeholder, not broken UI",
+      "npm test passes",
+      "npm run build passes",
+      "No paid API consumed"
+    ],
+    "status": "failed",
+    "created_at": "2026-08-09T01:27:46.888795",
+    "completed_at": null,
+    "error": "BUILD_FAILED: production build did not pass; TESTS_FAILED: 5 tests failed; NO_CHANGES: no files were modified"
+  },
+  {
+    "id": "MI-15.70-68ddfc",
+    "project": "market-intelligence",
+    "sprint": "15.70",
+    "objective": "Sprint 15.70: Expand representative product resources to all 9 categories. Add brand, model, product URL, image URL, source type, and verification date for each category. Ensure image load failures show placeholder state without breaking the hot product list. Never use unverified search thumbnails, AI-generated images, or hotlinked images without traceable source.",
+    "priority": "high",
+    "constraints": [
+      "no_paid_api",
+      "preserve_existing_data",
+      "incremental_change",
+      "run_tests",
+      "create_commit"
+    ],
+    "success_criteria": [
+      "All 9 product categories have representative product entries",
+      "Image failures show placeholder, not broken UI",
+      "npm test passes",
+      "npm run build passes",
+      "No paid API consumed"
+    ],
+    "status": "failed",
+    "created_at": "2026-08-09T01:27:46.903318",
+    "completed_at": null,
+    "error": "BUILD_FAILED: production build did not pass; TESTS_FAILED: 5 tests failed; NO_CHANGES: no files were modified"
+  },
+  {
+    "id": "MI-15.70-67d70d",
+    "project": "market-intelligence",
+    "sprint": "15.70",
+    "objective": "Sprint 15.70: Expand representative product resources to all 9 categories. Add brand, model, product URL, image URL, source type, and verification date for each category. Ensure image load failures show placeholder state without breaking the hot product list. Never use unverified search thumbnails, AI-generated images, or hotlinked images without traceable source.",
+    "priority": "high",
+    "constraints": [
+      "no_paid_api",
+      "preserve_existing_data",
+      "incremental_change",
+      "run_tests",
+      "create_commit"
+    ],
+    "success_criteria": [
+      "All 9 product categories have representative product entries",
+      "Image failures show placeholder, not broken UI",
+      "npm test passes",
+      "npm run build passes",
+      "No paid API consumed"
+    ],
+    "status": "failed",
+    "created_at": "2026-08-09T01:27:46.917613",
+    "completed_at": null,
+    "error": "BUILD_FAILED: production build did not pass; TESTS_FAILED: 5 tests failed; NO_CHANGES: no files were modified"
+  },
+  {
+    "id": "MI-TEST-001-986ee0",
+    "project": "market-intelligence",
+    "sprint": "TEST-001",
+    "objective": "MI-TEST-001: Create a file tests/_supervisor_test.md with exactly this content on a single line: \"MI-TEST-001: Supervisor end-to-end test completed.\" Then run git add and git commit with message \"MI-TEST-001: Supervisor e2e test\". Do not modify any other files. Do not run tests.",
+    "priority": "high",
+    "constraints": [
+      "no_paid_api",
+      "preserve_existing_data"
+    ],
+    "success_criteria": [
+      "test file created",
+      "git committed"
+    ],
+    "status": "pending",
+    "created_at": "2026-08-09T00:00:00",
+    "completed_at": null
+  },
+  {
+    "id": "MI-15.70-1c88a9",
+    "project": "market-intelligence",
+    "sprint": "15.70",
+    "objective": "Sprint 15.70: 代表产品资源覆盖",
+    "priority": "high",
+    "constraints": [
+      "no_paid_api",
+      "preserve_existing_data",
+      "incremental_change"
+    ],
+    "success_criteria": [
+      "npm test passes",
+      "npm run build passes",
+      "no paid API consumed"
+    ],
+    "require_tests": true,
+    "status": "failed",
+    "created_at": "2026-08-09T03:46:21.649984",
+    "completed_at": null,
+    "error": "BUILD_FAILED: production build did not pass; TESTS_FAILED: 1 tests failed; NO_CHANGES: no files were modified"
+  },
+  {
+    "id": "MI-15.70-aef456",
+    "project": "market-intelligence",
+    "sprint": "15.70",
+    "objective": "Sprint 15.70: 代表产品资源覆盖",
+    "priority": "high",
+    "constraints": [
+      "no_paid_api",
+      "preserve_existing_data",
+      "incremental_change"
+    ],
+    "success_criteria": [
+      "npm test passes",
+      "npm run build passes",
+      "no paid API consumed"
+    ],
+    "require_tests": true,
+    "status": "failed",
+    "created_at": "2026-08-09T03:46:21.669927",
+    "completed_at": null,
+    "error": "BUILD_FAILED: production build did not pass; TESTS_FAILED: 1 tests failed; NO_CHANGES: no files were modified"
+  },
+  {
+    "id": "MI-15.70-b04f57",
+    "project": "market-intelligence",
+    "sprint": "15.70",
+    "objective": "Sprint 15.70: 代表产品资源覆盖",
+    "priority": "high",
+    "constraints": [
+      "no_paid_api",
+      "preserve_existing_data",
+      "incremental_change"
+    ],
+    "success_criteria": [
+      "npm test passes",
+      "npm run build passes",
+      "no paid API consumed"
+    ],
+    "require_tests": true,
+    "status": "failed",
+    "created_at": "2026-08-09T03:46:21.687313",
+    "completed_at": null,
+    "error": "BUILD_FAILED: production build did not pass; TESTS_FAILED: 1 tests failed; NO_CHANGES: no files were modified"
+  }
+]

@@ -20,9 +20,17 @@ from task_status import get_status_summary
 
 
 def main():
-
     args = sys.argv[1:]
 
+    # ---- v0.3: --supervise mode ----
+    if "--supervise" in args:
+        args.remove("--supervise")
+        use_gpt = "--gpt" in args
+        if use_gpt:
+            args.remove("--gpt")
+        return _run_supervisor(args, gpt_mode=use_gpt)
+
+    # ---- v0.2: single-task mode ----
     project = "market"
 
     if "--project" in args:
@@ -200,6 +208,59 @@ Task:
     except Exception as e:
         update_task(task_id, "failed", str(e))
         raise
+
+
+def _run_supervisor(args: list, gpt_mode: bool = False) -> None:
+    """v0.3 autonomous supervisor mode."""
+    import json
+    from core.supervisor import run_supervisor
+    from core.memory import full_state
+
+    project = "market"
+    if "--project" in args:
+        idx = args.index("--project")
+        project = args[idx + 1]
+
+    with open("config.yaml", "r") as f:
+        config = yaml.safe_load(f)
+
+    project_path = None
+    for w in config.get("workers", []):
+        if w.get("project") == project or w.get("project") == f"{project}-intelligence":
+            project_path = w["directory"]
+            break
+    if not project_path:
+        project_path = config.get("projects", {}).get(project, {}).get("path", "")
+
+    if not project_path:
+        print(f"ERROR: Unknown project '{project}'")
+        sys.exit(1)
+
+    print(f"Yundor Agent Bridge v0.3 — Supervisor Mode {'(GPT-managed)' if gpt_mode else '(Rule-based)'}")
+    print(f"Project: {project}")
+    print(f"Path: {project_path}")
+    print()
+
+    if gpt_mode:
+        from core.gpt_supervisor import run_gpt_supervisor
+        print("Starting GPT-managed supervisor...")
+        result = run_gpt_supervisor(project_path)
+    else:
+        print("Starting rule-based supervisor...")
+        result = run_supervisor(project_path)
+    print()
+    print(json.dumps({
+        "status": result.get("status", "unknown"),
+        "iterations": result.get("iterations", 0),
+        "tasks_completed": result.get("tasks_completed", 0),
+        "failures": result.get("failures", result.get("consecutive_failures", 0)),
+        "decisions": result.get("decisions", []),
+    }, ensure_ascii=False, indent=2))
+
+    if result.get("status") == "paused":
+        print(f"\n⚠️  Supervisor paused. Reason: {result.get('reason', 'unknown')}")
+    elif result.get("status") == "blocked":
+        print(f"\n⛔ Supervisor blocked. Reason: {result.get('reason', 'unknown')}")
 
 
 if __name__ == "__main__":

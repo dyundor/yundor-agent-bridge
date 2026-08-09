@@ -1,0 +1,15 @@
+{
+  "supervisor_mode": "gpt_running",
+  "current_task_id": "GPT-2-1786279625",
+  "current_task_objective": "Build the frontend trend visualization component for the 9 normalized product categories. Create: 1) A reusable chart component using the existing UI library (e.g., Recharts or similar already in the project), 2) Data fetching from the existing trend API endpoint with loading/error states, 3) Time-range selector (30/90/180 days), 4) Category filter dropdown, 5) Empty state when no trend data exists. Add corresponding tests for all new components. Do NOT modify the existing trend API endpoint — only consume it.",
+  "iteration": 1,
+  "consecutive_failures": 0,
+  "total_tasks_completed": 0,
+  "last_review": {
+    "approved": false,
+    "quality_score": 88
+  },
+  "paused": false,
+  "pause_reason": null,
+  "emergency_stop": false
+}
