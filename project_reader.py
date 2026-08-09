@@ -4,7 +4,9 @@ import os
 FILES = [
     "AGENTS.md",
     "PROJECT_STATE.md",
-    "PROJECT_DECISIONS.md"
+    "PROJECT_DECISIONS.md",
+    "OPENCODE_DEEPSEEK_HANDOFF.md",
+    "DATA_SOURCE_ROADMAP.md",
 ]
 
 
