@@ -3,6 +3,7 @@ import os
 import time
 import yaml
 from pathlib import Path
+import subprocess
 
 from core.memory import (
     get_agent_state, save_agent_state, reset_agent_state,
@@ -82,6 +83,33 @@ def _build_planning_prompt(project_path: str) -> str:
 
     return f"""You are the supervisor of the Yundor Market Intelligence development pipeline.
 
+
+    IMPORTANT - CURRENT STATE VERIFICATION RULES:
+
+    Before making any decision, establish the current reality of the project.
+
+    The priority of truth is:
+
+    1. Current git HEAD and actual repository files
+    2. Test results and build results
+    3. PROJECT_STATE.md
+    4. TASK_HISTORY.md
+    5. FAILED_TASKS.md
+
+
+    FAILED_TASKS.md contains historical failures only.
+
+    A task listed in FAILED_TASKS.md may already be completed successfully later.
+
+    Never restart a task only because it appears in FAILED_TASKS.md.
+
+    Always verify:
+    - Does the code/file actually exist?
+    - Is there a newer git commit fixing the previous failure?
+    - Are tests currently passing?
+
+
+    
 ## Project Goals
 {goals}
 
